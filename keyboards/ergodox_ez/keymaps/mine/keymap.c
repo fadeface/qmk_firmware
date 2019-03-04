@@ -66,17 +66,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 							JA_NO, JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS,
 							JA_NO, JA_RCBR, JA_BSLS, JA_DQT , JA_QUOT, JA_RPRN, JA_TRNS,
 							       JA_DLR,	JA_TILD, JA_LPRN, JA_SLSH, JA_TRNS, JA_TRNS,
-							JA_NO, JA_RBRC, JA_PIPE, JA_TRNS, JA_GT,   JA_TRNS, JA_TRNS,
+							JA_NO, JA_RBRC, JA_PIPE, JA_ASTR, JA_LT,   JA_TRNS, JA_TRNS,
 											JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS,
 							JA_NO, JA_NO,
 							JA_NO,
 							JA_NO, JA_TRNS, J_Lb),
 
 	[_J_Ls2] = LAYOUT_ergodox(
-			JA_F7,   JA_F8,   JA_F9,   JA_F10,  JA_F11,  JA_F12,  JA_NO,
+			JA_F7,   JA_PSCR,   JA_INS,   JA_NLCK,  JA_APP,  JA_GRV,  JA_NO,
 			JA_TRNS, JA_AT,   JA_P7,   JA_P8,   JA_P9,   JA_LCBR, JA_NO,
 			JA_TRNS, JA_P0,   JA_P4,   JA_P5,   JA_P6,   JA_EXLM,
-			JA_TRNS, JA_COMM, JA_P1,   JA_P2,   JA_P3,   JA_LBRC, JA_NO,
+			JA_TRNS, JA_COMM, JA_P1,   JA_P2,   JA_P3,   JA_QUES, JA_NO,
 			JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS,
 														 JA_NO, JA_NO,
 												 				JA_NO,
@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 							JA_NO, JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS,
 							JA_NO, JA_RCBR, JA_BSLS, JA_DQT , JA_QUOT, JA_RPRN, JA_TRNS,
 							       JA_CIRC, JA_EQL,  JA_LPRN, JA_COLN, JA_TRNS, JA_TRNS,
-							JA_NO, JA_RBRC, JA_SCLN, JA_QUES, JA_HASH, JA_TRNS, JA_TRNS,
+							JA_NO, JA_HASH, JA_SCLN, JA_PERC, JA_PLUS, JA_TRNS, JA_TRNS,
 											JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS,
 							JA_NO, JA_NO,
 							JA_NO,
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_J_Lc1] = LAYOUT_ergodox(
 		JA_NO     , JA_NO     , JA_NO     , JA_NO     , JA_NO     , JA_NO     , JA_NO     ,
-		J_Lb        , JA_NO     , JA_NO     , JA_NO     , JA_NO     , JA_NO     , JA_NO     ,
+		J_Lb      , JA_NO     , JA_NO     , JA_NO     , JA_NO     , JA_NO     , JA_NO     ,
 		JA_TRNS   , JA_NO     , JA_NO     , JA_NO     , JA_NO     , JA_NO     ,
 		JA_TRNS   , JA_NO     , JA_NO     , JA_NO     , JA_NO     , JA_NO     , JA_NO     ,
 		JA_NO     , JA_NO     , JA_NO     , JA_NO     , JA_NO     ,

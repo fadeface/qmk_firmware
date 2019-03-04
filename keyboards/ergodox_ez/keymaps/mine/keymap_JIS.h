@@ -5,7 +5,7 @@
 #define JA_AT   KC_LBRC // @
 #define JA_LBRC KC_RBRC // [
 #define JA_SCLN KC_SCLN // ;
-#define JA_COLN KC_QUOT // *
+#define JA_COLN KC_QUOT // :
 #define JA_RBRC KC_BSLS // ]
 #define JA_COMM KC_COMM // ,
 #define JA_DOT  KC_DOT  // .
