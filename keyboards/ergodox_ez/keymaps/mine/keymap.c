@@ -226,7 +226,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		case MK_RSFT:
 			if (record->event.pressed) {
 				SEND_STRING(SS_DOWN(X_RSHIFT));
-                if (is_rsft_on) {
+                if (is_lsft_on) {
                     ime_on_j();
                 }
 				is_rsft_on = true;
