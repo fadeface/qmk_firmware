@@ -55,9 +55,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_J_Ls1] = LAYOUT_ergodox(
 			JA_F7,   JA_F8,   JA_F9,   JA_F10,  JA_F11,  JA_F12,  JA_NO,
-			JA_TRNS, JA_AMPR, JA_P7,   JA_P8,   JA_P9,   JA_LCBR, JA_NO,
-			JA_TRNS, JA_P0,   JA_P4,   JA_P5,   JA_P6,   JA_GT,
-			JA_TRNS, JA_PDOT, JA_P1,   JA_P2,   JA_P3,   JA_LBRC, JA_NO,
+			JA_TRNS, JA_AMPR, JA_7,   JA_8,   JA_9,   JA_LCBR, JA_NO,
+			JA_TRNS, JA_0,   JA_4,   JA_5,   JA_6,   JA_GT,
+			JA_TRNS, JA_DOT, JA_1,   JA_2,   JA_3,   JA_LBRC, JA_NO,
 			JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS,
 														 JA_NO, JA_NO,
 												 				JA_NO,
@@ -74,9 +74,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_J_Ls2] = LAYOUT_ergodox(
 			JA_F7,   JA_PSCR,   JA_INS,   JA_NLCK,  JA_APP,  JA_GRV,  JA_NO,
-			JA_TRNS, JA_AT,   JA_P7,   JA_P8,   JA_P9,   JA_LCBR, JA_NO,
-			JA_TRNS, JA_P0,   JA_P4,   JA_P5,   JA_P6,   JA_EXLM,
-			JA_TRNS, JA_COMM, JA_P1,   JA_P2,   JA_P3,   JA_QUES, JA_NO,
+			JA_TRNS, JA_AT,   JA_7,   JA_8,   JA_9,   JA_LCBR, JA_NO,
+			JA_TRNS, JA_0,   JA_4,   JA_5,   JA_6,   JA_EXLM,
+			JA_TRNS, JA_COMM, JA_1,   JA_2,   JA_3,   JA_QUES, JA_NO,
 			JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS, JA_TRNS,
 														 JA_NO, JA_NO,
 												 				JA_NO,
@@ -131,9 +131,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //
 //	[_A_Ls1] = LAYOUT_ergodox(
 //			KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NO,
-//			KC_TRNS, KC_AMPR, KC_P7,   KC_P8,   KC_P9,   KC_LCBR, KC_NO,
-//			KC_TRNS, KC_P0,   KC_P4,   KC_P5,   KC_P6,   KC_TILD,
-//			KC_TRNS, KC_PDOT, KC_P1,   KC_P2,   KC_P3,   KC_LBRC, KC_NO,
+//			KC_TRNS, KC_AMPR, KC_7,   KC_8,   KC_9,   KC_LCBR, KC_NO,
+//			KC_TRNS, KC_0,   KC_4,   KC_5,   KC_6,   KC_TILD,
+//			KC_TRNS, KC_PDOT, KC_1,   KC_2,   KC_3,   KC_LBRC, KC_NO,
 //			KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
 //														 KC_NO, KC_NO,
 //												 				KC_NO,
@@ -150,9 +150,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //
 //	[_A_Ls2] = LAYOUT_ergodox(
 //			KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NO,
-//			KC_TRNS, KC_AT,   KC_P7,   KC_P8,   KC_P9,   KC_LCBR, KC_NO,
-//			KC_TRNS, KC_P0,   KC_P4,   KC_P5,   KC_P6,   KC_EXLM,
-//			KC_TRNS, KC_COMM, KC_P1,   KC_P2,   KC_P3,   KC_LBRC, KC_NO,
+//			KC_TRNS, KC_AT,   KC_7,   KC_8,   KC_9,   KC_LCBR, KC_NO,
+//			KC_TRNS, KC_0,   KC_4,   KC_5,   KC_6,   KC_EXLM,
+//			KC_TRNS, KC_COMM, KC_1,   KC_2,   KC_3,   KC_LBRC, KC_NO,
 //			KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
 //														 KC_NO, KC_NO,
 //												 				KC_NO,
