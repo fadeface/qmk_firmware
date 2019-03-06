@@ -187,26 +187,45 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //								A_Lb,A_Lb,A_Lb)
 };
 //@formatter:on
-void ime_off_j(void);
-void ime_on_j(void);
+static void ime_ctl_j_keysend(bool ime_state);
+void ime_ctl_j(bool ime_state);
 
 bool is_ime_on_j;
+bool is_lsft_on = false;
+bool is_rsft_on = false;
 
-void ime_off_j(){
-    // X_INT2 = X_KANA  IME on
-    SEND_STRING(SS_TAP(X_INT2));
-    // X_GRAVE = X_ZHTG IME toggle = off
-    SEND_STRING(SS_TAP(X_GRAVE));
-    is_ime_on_j = false;
+static void ime_ctl_j_keysend(bool ime_state){
+	if(ime_state){
+		// X_INT2 = X_KANA  IME on
+		SEND_STRING(SS_TAP(X_INT2));
+	}
+	else {
+		// X_INT2 = X_KANA  IME on
+		SEND_STRING(SS_TAP(X_INT2));
+		// X_GRAVE = X_ZHTG IME toggle = off
+		SEND_STRING(SS_TAP(X_GRAVE));
+	}
 }
-void ime_on_j(){
-    // X_INT2 = X_KANA  IME on
-    SEND_STRING(SS_TAP(X_INT2));
-    is_ime_on_j = true;
+void ime_ctl_j(bool ime_state){
+	if(is_lsft_on || is_rsft_on){
+		SEND_STRING(SS_UP(X_LSHIFT));
+		SEND_STRING(SS_UP(X_RSHIFT));
+
+		ime_ctl_j_keysend(ime_state);
+
+		if(is_lsft_on){
+			SEND_STRING(SS_DOWN(X_LSHIFT));
+		}
+		if(is_rsft_on){
+			SEND_STRING(SS_DOWN(X_RSHIFT));
+		}
+	}
+	else {
+		ime_ctl_j_keysend(ime_state);
+	}
+    is_ime_on_j = ime_state;
 }
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-	static bool is_lsft_on = false;
-	static bool is_rsft_on = false;
 //	static bool is_jis_on = true;
     switch (keycode) {
         // dynamically generate these.
@@ -214,7 +233,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			if (record->event.pressed) {
 				SEND_STRING(SS_DOWN(X_LSHIFT));
 				if (is_rsft_on) {
-                    ime_on_j();
+                    ime_ctl_j(true);
 				}
 				is_lsft_on = true;
 			}
@@ -227,7 +246,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			if (record->event.pressed) {
 				SEND_STRING(SS_DOWN(X_RSHIFT));
                 if (is_lsft_on) {
-                    ime_on_j();
+                    ime_ctl_j(true);
                 }
 				is_rsft_on = true;
 			}
@@ -239,10 +258,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case J_Lb:
             if (record->event.pressed) {
                 if (is_lsft_on || is_rsft_on) {
-                    ime_on_j();
+                    ime_ctl_j(true);
                 }
                 else {
-                    ime_off_j();
+                    ime_ctl_j(false);
                 }
                 layer_state_set(1UL<<_J_Lb);
             }
@@ -250,10 +269,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		case J_Ls1:
 			if (record->event.pressed) {
                 if (is_lsft_on || is_rsft_on) {
-                    ime_on_j();
+                    ime_ctl_j(true);
                 }
                 else {
-                    ime_off_j();
+                    ime_ctl_j(false);
                 }
 				layer_state_set(1UL<<_J_Ls1);
 			}
@@ -261,10 +280,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		case J_Ls2:
 			if (record->event.pressed) {
                 if (is_lsft_on || is_rsft_on) {
-                    ime_on_j();
+                    ime_ctl_j(true);
                 }
                 else {
-                    ime_off_j();
+                    ime_ctl_j(false);
                 }
 				layer_state_set(1UL<<_J_Ls2);
 			}
@@ -272,10 +291,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		case J_Lc1:
 			if (record->event.pressed) {
                 if (is_lsft_on || is_rsft_on) {
-                    ime_on_j();
+                    ime_ctl_j(true);
                 }
                 else {
-                    ime_off_j();
+                    ime_ctl_j(false);
                 }
 				layer_state_set(1UL<<_J_Lc1);
 			}
@@ -292,12 +311,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
 		case J_IME_ON:
 			if (record->event.pressed) {
-				ime_on_j();
+				ime_ctl_j(true);
 			}
 			return false;
 		case J_IME_OFF:
 			if (record->event.pressed) {
-				ime_off_j();
+				ime_ctl_j(false);
 			}
 			return false;
     }
